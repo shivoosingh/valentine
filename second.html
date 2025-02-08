@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFE5F1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Why Me</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Add AOS animation library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/second.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+        <!-- Add audio player -->
+        <audio id="bgMusic" loop>
+            <source src="assets/Yiruma, (이루마) - Kiss the Rain.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    
+        <!-- Add background animation -->
+        <div class="background-animation"></div>
+        <div class="floating-hearts">
+        </div>
+    <div class="container">
+        <!-- Intro Card -->
+        <div class="intro-card animate__animated animate__bounceIn" id="introCard">
+            <div class="emoji-container">
+                <!-- <div class="emoji heart-beat">❤️</div> -->
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF2cjVmZ2QzMHJva3kycTRzYTRwZ2htMDMzcXNydHRzM2pma2wxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif" class="intro-gif" alt="Funny Love">
+                <!-- <img src="../assets/amit.jpg" class="intro-gif" alt="Funny Love"> -->
+            </div>
+            <h1 class="intro-title">Why Me? Let the Facts Speak</h1>
+            <!-- <img src="../assets/evil.png" alt="" style="width: 100px; height: 100px; border-radius: 50%;"> -->
+            <p class="lead">A Totally Unbiased, 100% Accurate Analysis</p>
+            <p class="lead">Prepare yourself for the most convincing presentation ever 😈</p>
+            <button class="btn start-btn animate__animated animate__pulse animate__infinite" onclick="startPresentation()">
+                Continue💕
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="card-container hidden" id="mainContent">
+            <div class="container">
+                <!-- Card 1 -->
+                <div class="card mb-4 hidden" id="card1" data-aos="flip-left">
+                    <div class="gif-container">
+                        <img src="assets/emoji.png" class="card-img-top" alt="Love">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">We both have a A in our name…</h3>
+                        <p class="card-text">Coincidence? I don't think so! This is destiny, the universe's way of telling us that we are, without a doubt, made for each other <br> 🌌✨💫<br><br></p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card mb-4 hidden" id="card2" data-aos="flip-right">
+                    <div class="gif-container">
+                        <img src="assets/fight.png" class="card-img-top" alt="Understanding">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">By Sword and Shield, I Shall Protect You</h3>
+                        <p class="card-text">From this day forth, I solemnly pledge my strength and wisdom to your service. Through every battle and every storm, I shall stand by your side, unwavering and true  <br> ⚔️🛡️🐺<br><br></p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="card mb-4 hidden" id="card3" data-aos="flip-left">
+                    <div class="gif-container">
+                        <img src="assets/glasses.png" class="card-img-top" alt="Trust">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Why The Others Don't Stand a Chance?</h3>
+                        <p class="card-text"> Me: Smart, reliable, funny, loyal, a mastermind, and ready to take over the world. <br>
+                        Them: Not me 🤷<br><br></p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card mb-4 hidden" id="card4" data-aos="flip-right">
+                    <div class="gif-container">
+                        <img src="assets/love1.png" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">My Love for You = Infinity</h3>
+                        <p class="card-text">Oh, so you don’t believe me, huh? Well, click the button below and see for yourself😤</p>
+                        <button class="btn btn-custom animate__animated animate__pulse" onclick="calculateCompatibility()">
+                            Calculate my love for you
+                        </button>
+                        <p id="compatibilityResult" class="mt-3 hidden"></p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card mb-4 hidden" id="card5" data-aos="flip-right">
+                    <div class="gif-container">
+                        <img src="assets/evil.png" class="card-img-top" alt="Understanding">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Unstoppable Together: A Force to be Reckoned With</h3>
+                        <p class="card-text">
+                            Together, we are unstoppable. With strength, determination, and an unbreakable will, we’ll crush every challenge. The world won’t stand a chance against us. <br>
+                            Muhehehehehahahahah😈😈 <br><br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card mb-4 hidden" id="card6" data-aos="flip-left">
+                    <div class="gif-container">
+                        <img src="assets/batman.jpg" class="card-img-top" alt="Heart">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">The Real Reason Why I’m The Best…</h3>
+                        <p class="card-text">
+                            I’ve told you all the reasons why I’m the best… but deep down, you already know the real reason…
+                            <br>
+                            <strong>“I am Batman”🦇</strong>
+                            (with a deep voice)<br><br>
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress mb-3">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="text-center navigation-buttons">
+                    <button class="btn btn-custom me-2 animate__animated animate__bounce" id="prevBtn" onclick="navigate(-1)">
+                        ⬅️ Previous
+                    </button>
+                    <button class="btn btn-custom animate__animated animate__bounce" id="nextBtn" onclick="navigate(1)">
+                        Next ➡️
+                    </button>
+                    <a href="proposal.html" class="btn btn-primary btn-custom hidden animate__animated animate__heartBeat animate__infinite" id="proposalBtn">
+                        Final Reveal💝
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/second.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffb3b3 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .proposal-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+            margin: 15px;
+        }
+
+        .heart-container {
+            position: relative;
+            height: 150px;
+        }
+
+        .heart {
+            font-size: 5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: -100px;
+            font-size: 20px;
+            animation: fall linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+            transform: scale(1);
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .no-btn {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .move-btn {
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .buttons-container {
+            min-height: 200px;
+            position: relative;
+        }
+
+        .message-btn-container .btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+
+        .modal-header {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reaction-image {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: popIn 0.5s ease-out;
+            z-index: 1;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .gif-container img {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gif-container img:hover {
+            transform: scale(1.05);
+        }
+
+        #message {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: messageAppear 1s forwards;
+        }
+
+        @keyframes messageAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-btn-container .btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .message-btn-container .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .heart {
+                font-size: 4rem;
+            }
+
+            .proposal-text {
+                font-size: 1.8rem;
+            }
+
+            .btn-lg {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+
+            .heart-container {
+                height: 120px;
+            }
+
+            .gif-container img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .proposal-card {
+                padding: 1.5rem;
+            }
+
+            .heart {
+                font-size: 3.5rem;
+            }
+
+            .proposal-text {
+                font-size: 1.5rem;
+            }
+
+            .buttons-container {
+                min-height: 150px;
+            }
+
+            .modal-dialog {
+                margin: 0.5rem;
+            }
+        }
+
+        .buttons-container .btn {
+            margin: 5px;
+            width: auto;
+            min-width: 200px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-background"></div>
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="proposal-card text-center animate__animated animate__zoomIn">
+            <div class="heart-container mb-4">
+                <div class="heart">❤️</div>
+            </div>
+            <h1 class="proposal-text mb-4 animate__animated animate__fadeInDown">Will You Be My Valentine?</h1>
+            <div class="buttons-container animate__animated animate__fadeInUp">
+                <button class="btn btn-lg yes-btn mb-3">Yes, I'd love to! 💖</button>
+                <button class="btn btn-lg btn-outline-danger no-btn">No way 😢</button>
+            </div>
+            <div id="message" class="mt-4 hidden">
+                <h3 class="text-danger mb-4 animate__animated animate__bounceIn">I knew you'd say yes! 🥰</h3>
+                <div class="gif-container animate__animated animate__zoomIn">
+                    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh2enNnN3NicmE2a2NqZG5qZDd0ODRxMnE1aGlqMGh5NWhqank2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hs6M7b3oBHBc9uDiaG/giphy.gif" 
+                         class="img-fluid rounded shadow" 
+                         alt="celebration">
+                </div>
+                <div class="message-btn-container mt-4 hidden animate__animated animate__fadeInUp">
+                    <button class="btn btn-outline-danger btn-lg" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#messageModal">
+                        Send Your Special Message ❤️
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">💝 Write Your Heart Out 💝</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="submit-to-google-sheet" id="specialMessageForm" 
+                          action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+                          method="POST">
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Special Message ❤️</label>
+                            <textarea class="form-control" id="message" style="resize: none;"
+                                    name="Special Message" 
+                                    rows="4" 
+                                    placeholder="Tell me something sweet..." 
+                                    required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 btn-lg">
+                            Send With Love 💌
+                        </button>
+                        <div id="msg" class="alert alert-success mt-3 message-slide" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span class="message-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Replace the audio element with -->
+    <audio id="boomSound" preload="auto">
+        <source src="assets/boom.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Add another audio element for the cheer sound -->
+    <audio id="cheerSound" preload="auto">
+        <source src="assets/cheer.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/proposal.js"></script>
+</body>
+</html>

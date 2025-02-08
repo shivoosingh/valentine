@@ -1,0 +1,414 @@
+.memory-card {
+    max-width: 800px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive image heights */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 40vh;
+    }
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.6);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+.caption-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+    .caption-content h3 {
+        font-size: 1.5rem;
+    }
+    .caption-content p {
+        font-size: 0.9rem;
+    }
+    .heart {
+        font-size: 3rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .caption-content h3 {
+        font-size: 1.2rem;
+    }
+    .caption-content p {
+        font-size: 0.8rem;
+    }
+    .heart {
+        font-size: 2.5rem;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+.heart {
+    font-size: 4rem;
+    color: #ff4b7d;
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive controls */
+@media (max-width: 576px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        background: rgba(0,0,0,0.2);
+    }
+    
+    .carousel-indicators {
+        margin-bottom: 0.5rem;
+    }
+    
+    .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+}
+
+.container {
+    padding: 15px;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+    .py-4 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.btn-floating {
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 75, 125, 0.2);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.progress {
+    max-width: 300px;
+    margin: 0 auto !important;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.quiz-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 75, 125, 0.2);
+}
+
+.option {
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+.option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 75, 125, 0.3);
+}
+
+.option.active {
+    background-color: #dc3545;
+    color: white;
+}
+
+.result-message {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* proposal */
+.proposal-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    max-width: 500px;
+    width: 90%;
+}
+
+.heart {
+    font-size: 5rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.proposal-text {
+    color: #ff4b7d;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.yes-btn {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+}
+
+.no-btn {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.flash-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: flash 1s ease;
+}
+
+.flash-image img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+@keyframes flash {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+
+.gif-container {
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gif-container img:hover {
+    transform: scale(1.05);
+}
+
+.message-btn-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.message-btn-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 576px) {
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    animation: firework ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+.firework::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform: scale(20);
+    border-radius: 50%;
+    opacity: 0;
+    animation: explosion 0.5s ease-out forwards;
+}
+
+@keyframes explosion {
+    50% {
+        transform: scale(25);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(40);
+        opacity: 0;
+    }
+}
+
+.message-slide {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .message-slide.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+/* Add responsive styles for mobile */
+@media (max-width: 576px) {
+    .proposal-card {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .proposal-text {
+        font-size: 2rem;
+    }
+
+    .message-btn-container {
+        padding: 0 10px;
+    }
+
+    .message-btn-container .btn {
+        width: 100%;         /* Make button full width on mobile */
+        max-width: 300px;    /* But limit maximum width */
+        font-size: 1rem;     /* Slightly smaller font */
+        padding: 12px 20px;  /* Adjust padding */
+    }
+
+    .gif-container {
+        max-width: 250px;
+    }
+}

@@ -1,0 +1,173 @@
+        body {
+            background: linear-gradient(135deg, #ffd1d1 0%, #ff9ecd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .love-letter {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: clamp(1rem, 4vw, 2rem);
+            width: 90%;
+            max-width: 800px;
+            margin: 1rem auto;
+            position: relative;
+        }
+
+        .letter-text {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        /* Responsive font sizes */
+        .letter-text h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: #dc3545;
+        }
+
+        .letter-text p {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Carousel controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: clamp(30px, 8vw, 50px);
+            height: clamp(30px, 8vw, 50px);
+            background-color: rgba(220, 53, 69, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 -15px;
+        }
+
+        @media (max-width: 576px) {
+            .carousel-control-prev,
+            .carousel-control-next {
+                margin: 0;
+            }
+        }
+
+        .carousel-indicators {
+            bottom: -40px;
+            margin-bottom: 0;
+        }
+
+        .carousel-indicators button {
+            background-color: #dc3545 !important;
+            width: clamp(8px, 2vw, 10px) !important;
+            height: clamp(8px, 2vw, 10px) !important;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        .continue-btn {
+            background: linear-gradient(45deg, #FF69B4, #FF1493);
+            color: white;
+            padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+            border-radius: 50px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            transition: all 0.3s ease;
+            animation: pulse 1.5s infinite;
+            white-space: nowrap;
+            margin-top: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .continue-btn:hover {
+          transform: scale(1.05) rotate(-2deg);
+          box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+          color: white;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #dc3545;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c82333;
+        }
+
+        /* Animation keyframes */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .love-letter {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 10px 0;
+            }
+
+            .letter-text {
+                padding: 0.8rem;
+            }
+        }
+
+        /* Landscape mode optimization */
+        @media (max-height: 600px) and (orientation: landscape) {
+            body {
+                padding: 10px 0;
+            }
+
+            .love-letter {
+                margin: 0.5rem auto;
+            }
+
+            .letter-text {
+                padding: 0.5rem;
+            }
+
+            .letter-text p {
+                margin-bottom: 0.3rem;
+            }
+        }

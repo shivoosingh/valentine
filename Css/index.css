@@ -42,10 +42,10 @@
         .carousel-control-next {
             width: clamp(30px, 8vw, 50px);
             height: clamp(30px, 8vw, 50px);
-            background-color: rgba(220, 53, 69, 0.3);
+            background-color: rgba(5, 0, 1, 0.3);
             border-radius: 50%;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(10%);
             margin: 0 -15px;
         }
 

@@ -164,7 +164,7 @@
 
         // google form
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwx39n5HHd8szhZ_3A1XcPpLhIyNL2q7up71o_MJwjC7lQxiJ8JutVkzWTkDHW_4tDM/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxipwwg5DwyxABCx6XALhmyzQMxtV5MyXN7glO6dbGGkQYSaCIgjL5ewjUgBswh4u0/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById('msg')
 
